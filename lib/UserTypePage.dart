@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ista_exams/login.dart';
 
 class UserTypePage extends StatefulWidget {
   const UserTypePage({super.key});
@@ -8,6 +9,9 @@ class UserTypePage extends StatefulWidget {
 }
 
 class _UserTypePageState extends State<UserTypePage> {
+  String stagaire = "Stagaire";
+  String formateur = "Formateur";
+  String admin = "Admin";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,14 +36,20 @@ class _UserTypePageState extends State<UserTypePage> {
                     side: BorderSide(width: 2, color: Colors.deepPurple),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Login(data: stagaire),
+                      ),
+                    );
+                  },
                   child: Container(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset("images/stagaireimage.png"),
                         SizedBox(width: 15),
-                        Text("Stagaire", style: TextStyle(fontSize: 20)),
+                        Text(stagaire, style: TextStyle(fontSize: 20)),
                       ],
                     ),
                   ),
@@ -51,14 +61,20 @@ class _UserTypePageState extends State<UserTypePage> {
                     side: BorderSide(width: 2, color: Colors.deepPurple),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Login(data: formateur),
+                      ),
+                    );
+                  },
                   child: Container(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset("images/teacherimager.png"),
                         SizedBox(width: 15),
-                        Text("Stagaire", style: TextStyle(fontSize: 20)),
+                        Text(formateur, style: TextStyle(fontSize: 20)),
                       ],
                     ),
                   ),
@@ -70,14 +86,20 @@ class _UserTypePageState extends State<UserTypePage> {
                     side: BorderSide(width: 2, color: Colors.deepPurple),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Login(data: admin),
+                      ),
+                    );
+                  },
                   child: Container(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset("images/administratorimage.png"),
                         SizedBox(width: 15),
-                        Text("Stagaire", style: TextStyle(fontSize: 20)),
+                        Text(admin, style: TextStyle(fontSize: 20)),
                       ],
                     ),
                   ),
